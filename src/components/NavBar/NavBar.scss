@@ -1,0 +1,145 @@
+.app-navbar {
+  position: fixed;
+  width: 100%;
+  transition: 0.3s;
+  z-index: 999;
+
+  &.on-scroll {
+    background-color: black;
+  }
+
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .logo {
+    min-height: 72px;
+  }
+
+  .content {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-left: 1rem;
+
+    .list {
+      position: relative;
+      transition: 0.3s;
+
+      .x-icon {
+        display: none;
+        top: 0;
+        height: 72px;
+        right: 1rem;
+        position: absolute;
+        font-size: 1.5rem;
+        color: white;
+        cursor: pointer;
+      }
+
+      @media (max-width: 992px) {
+        position: fixed;
+        height: 100vh;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        background-color: black;
+        padding: 50px 0;
+
+        &.active {
+          left: 0;
+        }
+
+        ul {
+          flex-direction: column;
+        }
+
+        a {
+          font-size: 20px;
+        }
+
+        .x-icon {
+          display: flex;
+        }
+      }
+    }
+
+    ul {
+      display: flex;
+      align-items: center;
+
+      a {
+        height: 72px;
+        padding: 1rem;
+        color: white;
+        font-weight: bold;
+
+        &:hover {
+          background-clip: text;
+          -webkit-background-clip: text;
+          background-image: linear-gradient(25deg, #2600fc, #ff00ea);
+          color: transparent;
+          transition: all 0.3s;
+        }
+      }
+    }
+
+    .toggle {
+      display: none;
+      color: white;
+      font-size: 1.5rem;
+      margin-left: 0.5rem;
+      cursor: pointer;
+
+      @media (max-width: 992px) {
+        display: block;
+      }
+    }
+  }
+}
+
+.search-container {
+  position: relative;
+  transition: 1s;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  width: 72px;
+  height: 72px;
+
+  .search-icon {
+    position: absolute;
+    color: white;
+    transition: 0.5s;
+    font-size: 1.5rem;
+    cursor: pointer;
+    right: 0.5rem;
+  }
+
+  .input-container {
+    width: 0;
+    overflow: hidden;
+    transition: 0.5s;
+
+    .main-input {
+      width: 100%;
+      padding-left: 1rem;
+      padding-right: calc(1.5rem + 1rem);
+    }
+  }
+
+  &.active {
+    flex: 1;
+
+    .search-icon {
+      color: black;
+    }
+
+    .input-container {
+      width: 100%;
+    }
+  }
+}

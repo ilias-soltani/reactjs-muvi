@@ -1,0 +1,31 @@
+.app-pagination {
+  padding: 2rem 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+
+  .icon {
+    text-decoration: none;
+    color: white;
+    transition: 0.3s;
+    font-size: 1.5rem;
+
+    &:hover {
+      color: var(--main-color);
+    }
+  }
+
+  .number {
+    color: white;
+    width: 2rem;
+    height: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    border-radius: 50%;
+    font-weight: 700;
+  }
+}

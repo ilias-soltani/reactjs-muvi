@@ -1,0 +1,83 @@
+.movie-carousel {
+  position: relative;
+  .heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding-bottom: 1.5rem;
+
+    .text {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+
+      .icon {
+        font-size: 2rem;
+        color: white;
+        @media (max-width: 500px) {
+          font-size: 1rem;
+        }
+      }
+
+      .title {
+        font-weight: bold;
+        margin: 0;
+        font-size: 2.5rem;
+        color: white;
+
+        @media (max-width: 500px) {
+          font-size: 1.5rem;
+        }
+
+        @media (max-width: 300px) {
+          font-size: 1rem;
+        }
+      }
+    }
+  }
+
+  .btn-none {
+    @media (max-width: 300px) {
+      font-size: 14px;
+    }
+  }
+}
+
+.prev,
+.next {
+  z-index: 5;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 2.5rem;
+  height: 2.5rem;
+  background-color: var(--section-color);
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+
+  @media (max-width: 767px) {
+    display: none !important;
+  }
+
+  &:hover {
+    svg {
+      color: white;
+    }
+  }
+
+  svg {
+    color: #8c8b8c;
+    font-size: 20px;
+    transition: 0.3s;
+  }
+}
+
+.prev {
+  left: -1rem;
+}
+
+.next {
+  right: -1rem;
+}

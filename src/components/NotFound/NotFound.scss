@@ -1,0 +1,24 @@
+.not-found-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  position: relative;
+  height: 100vh;
+  background-color: var(--section-color);
+
+  > h1 {
+    position: absolute;
+    z-index: 0;
+    font-size: 180px;
+    opacity: 0.1;
+
+    @media (max-width: 767px) {
+      font-size: 150px;
+    }
+  }
+
+  > h3 {
+    position: relative;
+  }
+}

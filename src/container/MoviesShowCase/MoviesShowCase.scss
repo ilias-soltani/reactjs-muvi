@@ -1,0 +1,11 @@
+.movies-show-case {
+  background-color: var(--section-color);
+  padding-top: 72px;
+  position: relative;
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+}

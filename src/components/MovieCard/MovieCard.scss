@@ -1,0 +1,73 @@
+.movie-card {
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  width: 100%;
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Old versions of Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none; /* Non-prefixed version, currently
+                                supported by Chrome, Edge, Opera and Firefox */
+
+  .image {
+    flex: 1;
+    width: 100%;
+    max-height: 100%;
+    overflow: hidden;
+    border-radius: 5px;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: 0.5s;
+    }
+  }
+
+  .text {
+    margin-top: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+
+    .title {
+      color: white;
+      font-weight: bold;
+      text-transform: uppercase;
+      font-size: 1rem;
+      margin: 0;
+      display: -webkit-box;
+      -webkit-line-clamp: 1;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    .rating {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      color: white;
+
+      .icon {
+        color: var(--main-color);
+      }
+    }
+  }
+
+  .date {
+    color: #8c8b8c;
+    padding: 0;
+    margin: 0;
+  }
+
+  &:hover {
+    .image {
+      img {
+        transform: scale(1.05);
+      }
+    }
+  }
+}

@@ -1,0 +1,130 @@
+.item {
+  position: relative;
+  height: 90vh;
+  width: 100vw;
+  background-color: black;
+
+  &::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: -moz-linear-gradient(
+      0deg,
+      rgba(0, 0, 0, 0.3) 0%,
+      var(--purpule-color) 100%
+    );
+    background: -webkit-linear-gradient(
+      0deg,
+      rgba(0, 0, 0, 0.3) 0%,
+      var(--purpule-color) 100%
+    );
+    background: linear-gradient(
+      0deg,
+      rgba(0, 0, 0, 0.3) 0%,
+      var(--purpule-color) 100%
+    );
+    z-index: 1;
+  }
+
+  .img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+
+    img {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+
+  .container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding-top: 72px;
+    z-index: 2;
+
+    .content {
+      width: 100%;
+    }
+
+    .item-name {
+      color: white;
+      font-weight: bold;
+      max-width: 50%;
+      font-size: 88px;
+      margin-bottom: 0.5rem;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+
+      @media (max-width: 992px) {
+        font-size: 64px;
+      }
+
+      @media (max-width: 767px) {
+        font-size: 48px;
+        max-width: initial;
+      }
+
+      @media (max-width: 300px) {
+        font-size: 40px;
+      }
+    }
+
+    .item-categories {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      margin-bottom: 0.5rem;
+
+      .category {
+        color: #aaa;
+        text-transform: uppercase;
+        font-weight: 500;
+      }
+    }
+
+    .info {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: white;
+      margin-bottom: 1rem;
+      font-weight: 500;
+      flex-wrap: wrap;
+
+      .rating {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+
+        svg {
+          color: var(--main-color);
+          font-size: 20px;
+        }
+      }
+    }
+
+    .btn-main {
+      a {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+
+        .icon-play {
+          width: 2rem;
+          height: 2rem;
+          border-radius: 50%;
+          background-color: rgba(255, 255, 255, 0.5);
+        }
+      }
+    }
+  }
+}
