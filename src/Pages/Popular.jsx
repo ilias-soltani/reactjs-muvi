@@ -5,16 +5,20 @@ import Container from "react-bootstrap/Container";
 
 import MovieSlider from "../components/MovieSlider/MovieSlider";
 import MovieList from "../components/MovieList/MovieList";
+import Loading from "../components/Loading/Loading"; // Import the Loading component
 
 function Popular() {
   const [movies, setMovies] = useState([]);
   const [allMovies, setAllMovies] = useState([]);
   const [totalPages, setTotalPages] = useState(-1);
+  const [loading, setLoading] = useState(true); // Add loading state
   const token = process.env.REACT_APP_TOKEN;
+
   const headers = {
     Accept: "application/json",
     Authorization: `Bearer ${token}`,
   };
+
   const getMovies = async () => {
     const url =
       "https://api.themoviedb.org/3/movie/popular?language=en-US&page=1";
@@ -33,12 +37,24 @@ function Popular() {
   };
 
   useEffect(() => {
-    getMovies();
-    getAllMovies(1);
+    const fetchData = async () => {
+      setLoading(true); // Set loading to true before fetching data
+      await getMovies();
+      await getAllMovies(1);
+      setLoading(false); // Set loading to false after data is fetched
+    };
+
+    fetchData();
   }, []);
+
   const onPageChange = (page) => {
     getAllMovies(page);
   };
+
+  if (loading) {
+    return <Loading />; // Show the loading component while data is being fetched
+  }
+
   return (
     <div className="movies-section-slider">
       <MovieSlider movies={movies} />

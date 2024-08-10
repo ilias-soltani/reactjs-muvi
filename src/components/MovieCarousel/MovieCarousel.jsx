@@ -32,19 +32,19 @@ function MovieCarousel({ children, title, sectionId, movies, swiperId }) {
         loop={true}
         breakpoints={{
           0: {
-            slidesPerView: 1,
+            slidesPerView: 1.2,
           },
           400: {
-            slidesPerView: 2,
+            slidesPerView: 2.2,
           },
           767: {
-            slidesPerView: 3,
+            slidesPerView: 3.2,
           },
           992: {
-            slidesPerView: 4,
+            slidesPerView: 4.2,
           },
           1200: {
-            slidesPerView: 5,
+            slidesPerView: 5.2,
           },
         }}
         modules={[Pagination, Navigation]}
